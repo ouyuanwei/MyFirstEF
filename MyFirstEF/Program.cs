@@ -15,7 +15,7 @@ namespace MyFirstEF
     {
         static void Main(string[] args)
         {
-             IStudentService service =new StudentService();
+            IStudentService service = InterfaceRealization.GetInterfaceRealization<IStudentService>();
             service.GetById(5);
 
             Console.ReadKey();
