@@ -14,6 +14,12 @@ namespace Implement
     {
         public void GetById(int id)
         {
+
+            var test = base.Get<Test_Student, StudentModel>((q) =>
+                   q.StudentId > 5
+               );
+
+
             var mod = unitOfWork.GetRepository<Test_Student>().dbSet.FirstOrDefault();
             Mapper.Initialize(x => x.CreateMap<Test_Student, StudentModel>());
             var stu = Mapper.Map<Test_Student, StudentModel>(mod);
