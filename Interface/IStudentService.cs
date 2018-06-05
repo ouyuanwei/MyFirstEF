@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Entity;
+using Interface.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Interface
 {
-    public interface IStudentService
+    public interface IStudentService: IBaseService
     {
-        void GetById(int id);
+        StudentModel GetById(int id);
     }
 }

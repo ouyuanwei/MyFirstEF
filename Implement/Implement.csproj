@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\BaseSerice.cs" />
+    <Compile Include="Base\BaseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentService.cs" />
   </ItemGroup>
@@ -60,6 +60,10 @@
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{083473b4-3554-4fef-8bbd-79e54156602f}</Project>
       <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GenericCache\GenericCache.csproj">
+      <Project>{4eb2395b-89fd-40ba-b473-0259a03b50ff}</Project>
+      <Name>GenericCache</Name>
     </ProjectReference>
     <ProjectReference Include="..\Interface\Interface.csproj">
       <Project>{407f0e86-6536-44ae-bfef-c37d11c49b7c}</Project>

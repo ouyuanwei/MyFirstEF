@@ -8,16 +8,16 @@ using AutoMapper;
 
 namespace Implement
 {
-    public class BaseSerice
+    public class BaseService
     {
         protected IUnitOfWork unitOfWork = new UnitOfWork();
         public virtual T Get<S, T>(Func<S, bool> where)
            where T : class
             where S : class
         {
-            Mapper.Initialize(x => x.CreateMap<S, T>());
             var resquest = unitOfWork.GetRepository<S>().dbSet.FirstOrDefault(where);
-            var back = Mapper.Map<S, T>(resquest);
+            var map = new MapperConfiguration(x => x.CreateMap<S, T>()).CreateMapper();
+            var back = map.Map<T>(resquest);
             return back;
         }
     }

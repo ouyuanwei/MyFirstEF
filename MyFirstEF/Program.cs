@@ -4,7 +4,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using Persistence;
 using Interface;
 
 namespace MyFirstEF
@@ -13,9 +12,9 @@ namespace MyFirstEF
     {
         static void Main(string[] args)
         {
-            IStudentService service = InterfaceRealization.GetInterfaceRealization<IStudentService>();
-            service.GetById(5);
-
+            IStudentService service = AssemblyImplement.GenericInstance.CreateInstance<IStudentService>();
+            var respones = service.GetById(5);
+            var respones1 = service.GetById(5);
             Console.ReadKey();
         }
     }
